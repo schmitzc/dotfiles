@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-rails.git'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
@@ -19,9 +18,27 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tComment'
 Bundle 'Syntastic'
-Bundle 'badwolf'
 
 filetype plugin indent on
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ack/Ag
+"
+" Adds :Ack/:Ag complete w/ quick fix. I prefer to use :Ag! which does not
+" open
+" the first thing it finds automatically.
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
+
+map <leader>a :Ag!<space>
+map <leader>A :Ag! <C-R><C-W><CR>
+
+" Use ag for search, it's much faster than ack.
+" See https://github.com/ggreer/the_silver_searcher
+" on mac: brew install the_silver_searcher
+let g:agprg = 'ag --nogroup --nocolor --column --smart-case'
 
 " Backups and swap
 set nobackup
@@ -65,7 +82,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,public/javascrip
 
 syntax enable
 set background=dark
-colorscheme badwolf
+colorscheme solarized
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
