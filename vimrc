@@ -82,7 +82,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,public/javascrip
 
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme grb256
 
 " Powerline settings
 let g:Powerline_symbols = 'fancy'
